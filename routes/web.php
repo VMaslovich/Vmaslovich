@@ -17,4 +17,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::post('home', 'HomeController@postIndex');
 Route::get('/', 'BaseController@getIndex');
+Route::get('/product/{id}', 'ProductController@getOne');
 Route::get('/{id}', 'BaseController@getStatic');

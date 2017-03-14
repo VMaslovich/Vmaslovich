@@ -11,8 +11,23 @@
                 <div class="panel-heading">Добро пожаловать на сайт</div>
 
                 <div class="panel-body">
-                   Главная страница
-                </div>
+                   @foreach ($products as $one)
+                   <div class = 'bg-succes'>
+                   <a href="{{asset('product/'.$one->id)}}" class = "btn btn-block btn-success" >
+                   {{$one->name}}
+                   </a>
+                                      @if($one->picture != 0)
+                   <img src="{{asset('/media/fotos/s_'.$one->picture)}}" align="left"/>
+                   @else
+                      <img src="{{asset('/media/fotos/def.jpg')}}" align="left"/> 
+               @endif
+                   {{$one->body}}
+                   <hr/>
+                   Цена:
+                   {{$one->price}}
+<br style="clear:both" />
+                   </div>
+                @endforeach
             </div>
         </div>
     </div>
